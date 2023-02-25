@@ -27,11 +27,11 @@ form.addEventListener("submit", function (e) {
       break;
     }
   }
-  
-  if(!/^[a-z]*@[a-z]*\.[a-z]*$/.test(this.email.value.toLowerCase())) {
+
+  if (!/^[a-z]*@[a-z]*\.[a-z]*$/.test(this.email.value.toLowerCase())) {
     error.err = 1;
     error.message = MESSAGES.email;
-    error.filed = 'email'
+    error.field = "email";
   }
 
   if (error.err === 1) {
