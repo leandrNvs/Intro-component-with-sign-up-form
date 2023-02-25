@@ -27,6 +27,12 @@ form.addEventListener("submit", function (e) {
       break;
     }
   }
+  
+  if(!/^[a-z]*@[a-z]*\.[a-z]*$/.test(this.email.value.toLowerCase())) {
+    error.err = 1;
+    error.message = MESSAGES.email;
+    error.filed = 'email'
+  }
 
   if (error.err === 1) {
     const field = document.querySelector(`input[name='${error.field}']`);
